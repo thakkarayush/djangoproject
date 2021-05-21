@@ -1,0 +1,17 @@
+{% extends "student/layout.html" %}
+{% block body %}
+    <form method="post">
+        {% csrf_token %}
+        <h1>Student delete view</h1>
+    <h2 class="alert alert-danger" >Are you sure you want to delete</h2>
+    <ul>
+        <li>Name: {{ object.name }}</li>
+        <li>Rollno: {{ object.rollno }}</li>
+        <li>Duration: {{ object.address }}</li>
+        <li>Fees: {{ object.std }}</li>
+    </ul>
+        <input type="submit" class="btn btn-danger" value="yes I am sure">
+        <a class="btn btn-secondary" href="{% url 'student-view' %}">cancel</a></form>
+
+
+{% endblock %}

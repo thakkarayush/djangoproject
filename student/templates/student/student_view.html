@@ -1,0 +1,29 @@
+{% extends "student/layout.html" %}
+{% block body %}
+    <h1> Student view page</h1>
+    <table id="example">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Rollno</th>
+                <th>Address</th>
+                <th>Standard</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+                <tr>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.rollno }}</td>
+                    <td>{{ student.address }}</td>
+                    <td>{{ student.std }}</td>
+                    <td><a class="btn btn-outline-primary" href="{% url 'student-update' student.id %}">update</a>
+                        <a class="btn btn-outline-secondary" href="{% url 'student-detail' student.id %}">detail</a>
+                        <a class="btn btn-outline-danger" href="{% url 'student-delete' student.id %}">delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

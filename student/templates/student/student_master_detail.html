@@ -1,0 +1,11 @@
+{% extends "student/layout.html" %}
+{% block body %}
+    <h1>Student detail view</h1>
+    <ul>
+        <li>Name: {{ object.name }}</li>
+        <li>Rollno: {{ object.rollno }}</li>
+        <li>Address: {{ object.address }}</li>
+        <li>Standard: {{ object.std }}</li>
+    </ul>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "course/layout.html" %}
+{% block body %}
+    <h1>Course entry form</h1>
+    <form method="post">
+    {% csrf_token %}
+        {{ form }}
+    <input type="submit" value="save">
+    <input type="reset" value="clear">
+    </form>
+{% endblock %}
